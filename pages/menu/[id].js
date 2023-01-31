@@ -15,7 +15,7 @@ const Details = ({ data }) => {
 export default Details;
 
 export async function getStaticPaths() {
-  const res = await fetch(`${process.env.BASE_URL}/data`);
+  const res = await fetch(`https://graceful-tuxedo-goat.cyclic.app/data`);
   const data = await res.json();
   const foods = data.slice(0, 10);
 
@@ -34,7 +34,7 @@ export async function getStaticProps(context) {
     params: { id },
   } = context;
 
-  const res = await fetch(`${process.env.BASE_URL}/data/${id}`);
+  const res = await fetch(`https://graceful-tuxedo-goat.cyclic.app/data/${id}`);
   const data = await res.json();
 
   if (!data.id) {
@@ -44,6 +44,6 @@ export async function getStaticProps(context) {
   }
   return {
     props: { data },
-    revalidate: +process.env.REVALIDATE, //seconds
+    revalidate: 3600, //seconds
   };
 }

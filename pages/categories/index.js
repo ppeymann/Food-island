@@ -10,7 +10,7 @@ export async function getServerSideProps(context) {
   const {
     query: { difficulty, time },
   } = context;
-  const res = await fetch(`${process.env.BASE_URL}/data`);
+  const res = await fetch(`https://graceful-tuxedo-goat.cyclic.app/data`);
   const data = await res.json();
 
   const filter = data.filter((item) => {

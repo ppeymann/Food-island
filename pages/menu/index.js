@@ -8,11 +8,11 @@ const Menu = ({ data }) => {
 export default Menu;
 
 export async function getStaticProps() {
-  const res = await fetch(`${process.env.BASE_URL}/data`);
+  const res = await fetch(`https://graceful-tuxedo-goat.cyclic.app/data`);
   const data = await res.json();
 
   return {
     props: { data },
-    revalidate: +process.env.REVALIDATE, //seconds
+    revalidate: 3600, //seconds
   };
 }
