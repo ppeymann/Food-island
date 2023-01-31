@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Itim&display=swap");
 .header {
   max-width: 900px;
   margin: auto;
@@ -31,7 +30,6 @@
 .footer a {
   text-decoration: none;
   color: #1a3509;
-  font-family: "Itim", cursive;
 }
 
 .container {
